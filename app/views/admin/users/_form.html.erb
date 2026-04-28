@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-body">
+    <% if user.errors.any? %>
+      <div class="alert alert-danger">
+        <div class="fw-semibold mb-2">Could not create user:</div>
+        <ul class="mb-0">
+          <% user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_with model: [:admin, user], local: true do |form| %>
+      <div class="mb-3">
+        <%= form.label :email, class: 'form-label' %>
+        <%= form.email_field :email, class: 'form-control', required: true %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :name, class: 'form-label' %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= form.label :role, class: 'form-label' %>
+          <%= form.select :role, User.roles.keys.map { |role| [role.titleize, role] }, {}, class: 'form-select' %>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <%= form.label :status, class: 'form-label' %>
+          <%= form.select :status, User.statuses.keys.map { |status| [status.titleize, status] }, {}, class: 'form-select' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <%= form.label :password, class: 'form-label' %>
+          <%= form.password_field :password, class: 'form-control', required: true %>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <%= form.label :password_confirmation, class: 'form-label' %>
+          <%= form.password_field :password_confirmation, class: 'form-control', required: true %>
+        </div>
+      </div>
+
+      <%= form.submit 'Create user', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

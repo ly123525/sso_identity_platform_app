@@ -1,0 +1,9 @@
+<div class="d-flex align-items-center justify-content-between mb-4">
+  <div>
+    <h1 class="h3 mb-1">New user</h1>
+    <p class="text-muted mb-0">Create a user who can sign in to the platform.</p>
+  </div>
+  <%= link_to 'Back to users', admin_users_path, class: 'btn btn-outline-secondary' %>
+</div>
+
+<%= render 'form', user: @user %>
