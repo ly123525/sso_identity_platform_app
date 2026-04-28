@@ -2,7 +2,7 @@
   <div class="card-body">
     <% if user.errors.any? %>
       <div class="alert alert-danger">
-        <div class="fw-semibold mb-2">Could not create user:</div>
+        <div class="fw-semibold mb-2">Could not save user:</div>
         <ul class="mb-0">
           <% user.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -34,19 +34,21 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <%= form.label :password, class: 'form-label' %>
-          <%= form.password_field :password, class: 'form-control', required: true %>
-        </div>
+      <% if show_password_fields %>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <%= form.label :password, class: 'form-label' %>
+            <%= form.password_field :password, class: 'form-control', required: true %>
+          </div>
 
-        <div class="col-md-6 mb-3">
-          <%= form.label :password_confirmation, class: 'form-label' %>
-          <%= form.password_field :password_confirmation, class: 'form-control', required: true %>
+          <div class="col-md-6 mb-3">
+            <%= form.label :password_confirmation, class: 'form-label' %>
+            <%= form.password_field :password_confirmation, class: 'form-control', required: true %>
+          </div>
         </div>
-      </div>
+      <% end %>
 
-      <%= form.submit 'Create user', class: 'btn btn-primary' %>
+      <%= form.submit submit_label, class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>

@@ -1,11 +1,19 @@
 module Admin
   class BaseController < ApplicationController
     before_action :authenticate_user!
+    before_action :require_active_user!
     before_action :require_admin!
 
     layout 'admin'
 
     private
+
+    def require_active_user!
+      return if current_user.active?
+
+      sign_out current_user
+      redirect_to new_user_session_path, alert: 'Your account has been disabled.'
+    end
 
     def require_admin!
       return if current_user.admin?

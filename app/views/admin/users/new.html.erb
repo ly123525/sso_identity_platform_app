@@ -6,4 +6,4 @@
   <%= link_to 'Back to users', admin_users_path, class: 'btn btn-outline-secondary' %>
 </div>
 
-<%= render 'form', user: @user %>
+<%= render 'form', user: @user, submit_label: 'Create user', show_password_fields: true %>

@@ -17,4 +17,11 @@ class UserTest < ActiveSupport::TestCase
   test "does not include self registration devise module" do
     assert_not User.devise_modules.include?(:registerable)
   end
+
+  test "disabled user is not active for authentication" do
+    user = User.new(email: "disabled@example.com", password: "password123", status: "disabled")
+
+    assert_not user.active_for_authentication?
+    assert_equal :disabled, user.inactive_message
+  end
 end

@@ -1,0 +1,12 @@
+<div class="d-flex align-items-center justify-content-between mb-4">
+  <div>
+    <h1 class="h3 mb-1">Edit user</h1>
+    <p class="text-muted mb-0">Update identity and access settings for <%= @user.email %>.</p>
+  </div>
+  <div>
+    <%= link_to 'Reset password', edit_password_admin_user_path(@user), class: 'btn btn-outline-primary' %>
+    <%= link_to 'Back to users', admin_users_path, class: 'btn btn-outline-secondary ms-2' %>
+  </div>
+</div>
+
+<%= render 'form', user: @user, submit_label: 'Update user', show_password_fields: false %>

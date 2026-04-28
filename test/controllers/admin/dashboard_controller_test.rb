@@ -34,4 +34,13 @@ class Admin::DashboardControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "h1", text: "Access denied"
   end
+
+  test "disabled signed in user is signed out and redirected" do
+    sign_in users(:disabled_admin)
+
+    get admin_root_path
+
+    assert_redirected_to new_user_session_path
+    assert_equal "Your account has been disabled.", flash[:alert]
+  end
 end

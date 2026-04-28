@@ -11,3 +11,10 @@ user:
   name: Regular User
   role: user
   status: active
+
+disabled_admin:
+  email: disabled-admin@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  name: Disabled Admin
+  role: admin
+  status: disabled
