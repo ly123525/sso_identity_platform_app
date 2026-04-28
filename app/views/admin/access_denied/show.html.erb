@@ -2,11 +2,11 @@
   <div class="col-lg-7">
     <div class="card">
       <div class="card-body text-center py-5">
-        <h1 class="h3 mb-3">Access denied</h1>
+        <h1 class="h3 mb-3"><%= t('admin.access_denied.title') %></h1>
         <p class="text-muted mb-4">
-          Your account is signed in, but it does not have permission to access the admin area.
+          <%= t('admin.access_denied.message') %>
         </p>
-        <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary' %>
+        <%= button_to t('admin.nav.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary' %>
       </div>
     </div>
   </div>

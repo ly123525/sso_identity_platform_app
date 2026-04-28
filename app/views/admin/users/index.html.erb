@@ -1,9 +1,9 @@
 <div class="d-flex align-items-center justify-content-between mb-4">
   <div>
-    <h1 class="h3 mb-1">Users</h1>
-    <p class="text-muted mb-0">Create and review platform users.</p>
+    <h1 class="h3 mb-1"><%= t('admin.users.index.title') %></h1>
+    <p class="text-muted mb-0"><%= t('admin.users.index.subtitle') %></p>
   </div>
-  <%= link_to 'New user', new_admin_user_path, class: 'btn btn-primary' %>
+  <%= link_to t('admin.users.actions.new'), new_admin_user_path, class: 'btn btn-primary' %>
 </div>
 
 <div class="card">
@@ -11,12 +11,12 @@
     <table class="table table-hover align-middle mb-0">
       <thead>
         <tr>
-          <th>Email</th>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Status</th>
-          <th>Created</th>
-          <th class="text-end">Actions</th>
+          <th><%= t('admin.users.table.email') %></th>
+          <th><%= t('admin.users.table.name') %></th>
+          <th><%= t('admin.users.table.role') %></th>
+          <th><%= t('admin.users.table.status') %></th>
+          <th><%= t('admin.users.table.created') %></th>
+          <th class="text-end"><%= t('admin.users.table.actions') %></th>
         </tr>
       </thead>
       <tbody>
@@ -28,8 +28,8 @@
             <td><span class="badge bg-<%= user.active? ? 'success' : 'warning' %>"><%= user.status %></span></td>
             <td><%= user.created_at.strftime('%Y-%m-%d %H:%M') %></td>
             <td class="text-end">
-              <%= link_to 'Edit', edit_admin_user_path(user), class: 'btn btn-outline-secondary btn-sm' %>
-              <%= link_to 'Reset password', edit_password_admin_user_path(user), class: 'btn btn-outline-secondary btn-sm ms-1' %>
+              <%= link_to t('admin.users.actions.edit'), edit_admin_user_path(user), class: 'btn btn-outline-secondary btn-sm' %>
+              <%= link_to t('admin.users.actions.reset_password'), edit_password_admin_user_path(user), class: 'btn btn-outline-secondary btn-sm ms-1' %>
             </td>
           </tr>
         <% end %>

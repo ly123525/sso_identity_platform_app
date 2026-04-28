@@ -1,0 +1,125 @@
+zh-CN:
+  hello: "你好"
+  activerecord:
+    attributes:
+      user:
+        email: "邮箱"
+        name: "姓名"
+        role: "角色"
+        status: "状态"
+        password: "密码"
+        password_confirmation: "确认密码"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "不能为空"
+              taken: "已被使用"
+            password:
+              blank: "不能为空"
+              too_short: "长度太短"
+            password_confirmation:
+              confirmation: "与密码不一致"
+  errors:
+    messages:
+      blank: "不能为空"
+      taken: "已被使用"
+      confirmation: "与%{attribute}不一致"
+      too_short: "长度太短，至少需要 %{count} 个字符"
+      inclusion: "不是有效值"
+  devise:
+    failure:
+      already_authenticated: "你已经登录。"
+      disabled: "你的账号已被禁用。"
+      inactive: "你的账号尚未激活。"
+      invalid: "%{authentication_keys} 或密码无效。"
+      locked: "你的账号已被锁定。"
+      last_attempt: "你还有最后一次尝试机会，之后账号会被锁定。"
+      not_found_in_database: "%{authentication_keys} 或密码无效。"
+      timeout: "你的会话已过期，请重新登录。"
+      unauthenticated: "请先登录。"
+      unconfirmed: "你需要先确认邮箱地址。"
+    sessions:
+      signed_in: "登录成功。"
+      signed_out: "退出成功。"
+      already_signed_out: "已经退出登录。"
+    passwords:
+      send_instructions: "你将在几分钟内收到重置密码的邮件。"
+      send_paranoid_instructions: "如果邮箱存在，你将在几分钟内收到密码找回邮件。"
+      updated: "密码修改成功，你已登录。"
+      updated_not_active: "密码修改成功。"
+  devise_views:
+    labels:
+      email: "邮箱"
+      password: "密码"
+      remember_me: "记住我"
+    sessions:
+      title: "登录"
+      submit: "登录"
+    passwords:
+      forgot: "忘记密码？"
+      new_title: "忘记密码？"
+      edit_title: "修改密码"
+      new_password: "新密码"
+      confirm_password: "确认新密码"
+      send_instructions: "发送重置说明"
+      change_password: "修改密码"
+    errors:
+      title: "请修正以下错误："
+  admin:
+    layout:
+      brand: "SSO 管理后台"
+    nav:
+      dashboard: "控制台"
+      users: "用户"
+      sign_out: "退出登录"
+    flash:
+      account_disabled: "你的账号已被禁用。"
+      not_authorized: "你没有权限访问管理后台。"
+    dashboard:
+      title: "控制台"
+      subtitle: "管理用户和身份平台设置。"
+      total_users: "用户总数"
+      admins: "管理员"
+      active_users: "活跃用户"
+      manage_users: "管理用户"
+    access_denied:
+      title: "无权访问"
+      message: "你已登录，但当前账号没有访问管理后台的权限。"
+    users:
+      index:
+        title: "用户"
+        subtitle: "创建和查看平台用户。"
+      new:
+        title: "新建用户"
+        subtitle: "创建可以登录平台的用户。"
+      edit:
+        title: "编辑用户"
+        subtitle: "更新 %{email} 的身份和访问设置。"
+      password:
+        title: "重置密码"
+        subtitle: "为 %{email} 设置新密码。"
+        error_title: "无法重置密码："
+        new_password: "新密码"
+        confirm_password: "确认新密码"
+      form:
+        error_title: "无法保存用户："
+      table:
+        email: "邮箱"
+        name: "姓名"
+        role: "角色"
+        status: "状态"
+        created: "创建时间"
+        actions: "操作"
+      actions:
+        new: "新建用户"
+        edit: "编辑"
+        back: "返回用户列表"
+        create: "创建用户"
+        update: "更新用户"
+        reset_password: "重置密码"
+      flash:
+        created: "用户已创建。"
+        updated: "用户已更新。"
+        password_reset: "用户密码已重置。"

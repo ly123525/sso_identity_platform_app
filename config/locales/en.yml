@@ -31,6 +31,89 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        name: "Name"
+        role: "Role"
+        status: "Status"
+        password: "Password"
+        password_confirmation: "Password confirmation"
   devise:
     failure:
       disabled: "Your account has been disabled."
+  devise_views:
+    labels:
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me"
+    sessions:
+      title: "Sign in"
+      submit: "Sign in"
+    passwords:
+      forgot: "Forgot your password?"
+      new_title: "Forgot your password?"
+      edit_title: "Change your password"
+      new_password: "New password"
+      confirm_password: "Confirm new password"
+      send_instructions: "Send reset instructions"
+      change_password: "Change password"
+    errors:
+      title: "Please fix the following errors:"
+  admin:
+    layout:
+      brand: "SSO Admin"
+    nav:
+      dashboard: "Dashboard"
+      users: "Users"
+      sign_out: "Sign out"
+    flash:
+      account_disabled: "Your account has been disabled."
+      not_authorized: "You are not authorized to access the admin area."
+    dashboard:
+      title: "Dashboard"
+      subtitle: "Manage users and identity platform settings."
+      total_users: "Total users"
+      admins: "Admins"
+      active_users: "Active users"
+      manage_users: "Manage users"
+    access_denied:
+      title: "Access denied"
+      message: "Your account is signed in, but it does not have permission to access the admin area."
+    users:
+      index:
+        title: "Users"
+        subtitle: "Create and review platform users."
+      new:
+        title: "New user"
+        subtitle: "Create a user who can sign in to the platform."
+      edit:
+        title: "Edit user"
+        subtitle: "Update identity and access settings for %{email}."
+      password:
+        title: "Reset password"
+        subtitle: "Set a new password for %{email}."
+        error_title: "Could not reset password:"
+        new_password: "New password"
+        confirm_password: "Confirm new password"
+      form:
+        error_title: "Could not save user:"
+      table:
+        email: "Email"
+        name: "Name"
+        role: "Role"
+        status: "Status"
+        created: "Created"
+        actions: "Actions"
+      actions:
+        new: "New user"
+        edit: "Edit"
+        back: "Back to users"
+        create: "Create user"
+        update: "Update user"
+        reset_password: "Reset password"
+      flash:
+        created: "User was created."
+        updated: "User was updated."
+        password_reset: "User password was reset."

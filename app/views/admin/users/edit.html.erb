@@ -1,12 +1,12 @@
 <div class="d-flex align-items-center justify-content-between mb-4">
   <div>
-    <h1 class="h3 mb-1">Edit user</h1>
-    <p class="text-muted mb-0">Update identity and access settings for <%= @user.email %>.</p>
+    <h1 class="h3 mb-1"><%= t('admin.users.edit.title') %></h1>
+    <p class="text-muted mb-0"><%= t('admin.users.edit.subtitle', email: @user.email) %></p>
   </div>
   <div>
-    <%= link_to 'Reset password', edit_password_admin_user_path(@user), class: 'btn btn-outline-primary' %>
-    <%= link_to 'Back to users', admin_users_path, class: 'btn btn-outline-secondary ms-2' %>
+    <%= link_to t('admin.users.actions.reset_password'), edit_password_admin_user_path(@user), class: 'btn btn-outline-primary' %>
+    <%= link_to t('admin.users.actions.back'), admin_users_path, class: 'btn btn-outline-secondary ms-2' %>
   </div>
 </div>
 
-<%= render 'form', user: @user, submit_label: 'Update user', show_password_fields: false %>
+<%= render 'form', user: @user, submit_label: t('admin.users.actions.update'), show_password_fields: false %>

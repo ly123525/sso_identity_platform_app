@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="h3 mb-4"><%= t('devise_views.sessions.title') %></h1>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+      <div class="mb-3">
+        <%= form.label :email, t('devise_views.labels.email'), class: 'form-label' %>
+        <%= form.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :password, t('devise_views.labels.password'), class: 'form-label' %>
+        <%= form.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="form-check mb-3">
+          <%= form.check_box :remember_me, class: 'form-check-input' %>
+          <%= form.label :remember_me, t('devise_views.labels.remember_me'), class: 'form-check-label' %>
+        </div>
+      <% end %>
+
+      <%= form.submit t('devise_views.sessions.submit'), class: 'btn btn-primary' %>
+      <%= link_to t('devise_views.passwords.forgot'), new_password_path(resource_name), class: 'btn btn-link' %>
+    <% end %>
+  </div>
+</div>

@@ -20,7 +20,7 @@ module Admin
       @user = User.new(user_params)
 
       if @user.save
-        redirect_to admin_users_path, notice: 'User was created.'
+        redirect_to admin_users_path, notice: t('admin.users.flash.created')
       else
         render :new, status: :unprocessable_entity
       end
@@ -30,7 +30,7 @@ module Admin
       @user = User.find(params[:id])
 
       if @user.update(update_user_params)
-        redirect_to admin_users_path, notice: 'User was updated.'
+        redirect_to admin_users_path, notice: t('admin.users.flash.updated')
       else
         render :edit, status: :unprocessable_entity
       end
@@ -40,7 +40,7 @@ module Admin
       @user = User.find(params[:id])
 
       if @user.update(password_params)
-        redirect_to admin_users_path, notice: 'User password was reset.'
+        redirect_to admin_users_path, notice: t('admin.users.flash.password_reset')
       else
         render :edit_password, status: :unprocessable_entity
       end

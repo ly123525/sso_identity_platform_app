@@ -13,19 +13,20 @@
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <%= link_to 'SSO Admin', admin_root_path, class: 'navbar-brand' %>
+        <%= link_to t('admin.layout.brand'), admin_root_path, class: 'navbar-brand' %>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <%= link_to 'Dashboard', admin_root_path, class: 'nav-link' %>
+              <%= link_to t('admin.nav.dashboard'), admin_root_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Users', admin_users_path, class: 'nav-link' %>
+              <%= link_to t('admin.nav.users'), admin_users_path, class: 'nav-link' %>
             </li>
           </ul>
           <div class="d-flex align-items-center gap-3">
+            <%= render 'shared/language_switcher' %>
             <span class="navbar-text"><%= current_user.email %></span>
-            <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light btn-sm' %>
+            <%= button_to t('admin.nav.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-light btn-sm' %>
           </div>
         </div>
       </div>

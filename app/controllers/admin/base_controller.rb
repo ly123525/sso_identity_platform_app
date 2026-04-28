@@ -12,13 +12,13 @@ module Admin
       return if current_user.active?
 
       sign_out current_user
-      redirect_to new_user_session_path, alert: 'Your account has been disabled.'
+      redirect_to new_user_session_path, alert: t('admin.flash.account_disabled')
     end
 
     def require_admin!
       return if current_user.admin?
 
-      redirect_to admin_access_denied_path, alert: 'You are not authorized to access the admin area.'
+      redirect_to admin_access_denied_path, alert: t('admin.flash.not_authorized')
     end
   end
 end
