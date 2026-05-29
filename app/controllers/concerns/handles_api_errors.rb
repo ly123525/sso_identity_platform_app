@@ -2,6 +2,7 @@ module HandlesApiErrors
   extend ActiveSupport::Concern
 
   included do
+    # API 异常统一收口成同一种 JSON 结构，调用方不需要针对不同控制器分支处理。
     # Keep API failures in one JSON shape so clients do not branch on controller-specific errors.
     rescue_from ActionController::ParameterMissing, with: :render_parameter_missing
     rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
@@ -44,6 +45,7 @@ module HandlesApiErrors
   end
 
   def render_api_error(code:, message:, status:)
+    # 错误响应格式对齐项目 API 草案，保证各接口输出稳定一致。
     # Error payload matches the project API draft and stays stable across endpoints.
     render json: {
       error: {
